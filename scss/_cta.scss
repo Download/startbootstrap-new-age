@@ -1,19 +1,23 @@
 // Styling for the call to action section
 section.cta {
     position: relative;
-    padding: 250px 0;
-    background-image: url('../img/bg-cta.jpg');
-    background-position: center;
-    @include background-cover;
+    padding: 120px 0 460px 0;
+    background: no-repeat url("../img/lego.jpg");
+    background-size: 60%;
+    background-position: 90% 80%;
+
+//    @include background-cover;
     .cta-content {
         position: relative;
         z-index: 1;
         h2 {
-            font-size: 50px;
-            max-width: 450px;
+            font-size: 30px;
             margin-top: 0;
             margin-bottom: 25px;
-            color: white;
+        }
+        .btn {
+            color: black;
+            border-color: black;
         }
         @media (min-width: 768px) {
             h2 {

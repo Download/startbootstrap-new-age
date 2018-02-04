@@ -4,12 +4,55 @@
     background-color: white;
     @include transition-all;
     @include heading-font;
+
+    &.navbar-shrink {
+        border-color: fade-out($gray-darker, .9);
+        background-color: rgba(255,255,255,0.90);
+        border-bottom: 1px solid black;            
+        .navbar-brand {
+            color: $gray-darker;
+            &:hover,
+            &:focus {
+                color: black;
+            }
+            b, i {
+                filter: drop-shadow(0px 0px 15px #fff);
+            }
+        }
+        .navbar-nav > li > a,
+        .navbar-nav > li > a:focus {
+            filter: drop-shadow(0px 0px 15px #fff);
+            color: $gray-darker;
+            &:hover {
+                color: brighten($gray-darker, 30%);
+            }
+        }
+    }
+
     .navbar-brand {
-        color: $theme-primary;
         @include heading-font;
+        color: fade-out(white, .3);
+        
         &:hover,
         &:focus {
             color: darken($theme-primary, 10%);
+        }
+        img {
+            filter: drop-shadow(0px 0px 15px #fff);
+            margin-top: -4px;
+        }
+        b, i {
+            filter: drop-shadow(0px 1px 3px #000);            
+        }
+        i {
+            display: block;
+            font-size: 7px;
+            text-decoration: none;
+            font-style: initial;
+            margin-left: 58px;
+            letter-spacing: 1.7px;
+            margin-top: -12px;
+            margin-bottom: -3px;
         }
     }
     .navbar-toggler {
@@ -20,8 +63,10 @@
     .navbar-nav {
         > li {
             > a {
-                font-size: 11px;
                 @include alt-font;
+                font-size: 11px;
+                filter: drop-shadow(0px 1px 3px #000);            
+
                 &.active {
                     color: $theme-primary !important;
                     background-color: transparent;
@@ -39,7 +84,7 @@
             }
         }
     }
-    @media (min-width: 992px) {
+/*    @media (min-width: 992px) {  */
         border-color: transparent;
         background-color: transparent;
         .navbar-brand {
@@ -56,23 +101,5 @@
                 color: white;
             }
         }
-        &.navbar-shrink {
-            border-color: fade-out($gray-darker, .9);
-            background-color: white;
-            .navbar-brand {
-                color: $gray-darker;
-                &:hover,
-                &:focus {
-                    color: $theme-primary;
-                }
-            }
-            .navbar-nav > li > a,
-            .navbar-nav > li > a:focus {
-                color: $gray-darker;
-                &:hover {
-                    color: $theme-primary;
-                }
-            }
-        }
-    }
+/*    } */
 }

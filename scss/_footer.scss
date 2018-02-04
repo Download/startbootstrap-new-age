@@ -1,9 +1,17 @@
 // Styling for the footer
 footer {
+    @include background-cover;
+    background: url('../img/space-bottom.jpg') 50% 50%;
     padding: 25px 0;
+    height: 100vh;
     text-align: center;
     color: fade-out(white, .7);
-    background-color: $gray-darker;
+
+    .container,
+    .container .legal {
+        height: 100%;
+    }
+
     p {
         font-size: 12px;
         margin: 0;
